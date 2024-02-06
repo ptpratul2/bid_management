@@ -1,0 +1,200 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-02-06 22:58:32.239473",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "naming_series",
+  "customer",
+  "address",
+  "contact",
+  "column_break_dmhr",
+  "tender_no",
+  "type",
+  "source",
+  "column_break_njpm",
+  "pre_bid_conference_date",
+  "pre_bid_conference_venue",
+  "due_date",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_tender",
+  "section_break_gsem",
+  "mode_of_emd",
+  "emd_amount",
+  "bid_detail",
+  "column_break_dssq",
+  "description",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "column_break_dmhr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tender_no",
+   "fieldtype": "Data",
+   "label": "Tender No"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source"
+  },
+  {
+   "fieldname": "column_break_njpm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pre_bid_conference_date",
+   "fieldtype": "Date",
+   "label": "Pre Bid Conference Date"
+  },
+  {
+   "fieldname": "pre_bid_conference_venue",
+   "fieldtype": "Data",
+   "label": "Pre Bid Conference Venue"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Datetime",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Tender"
+  },
+  {
+   "fieldname": "parent_tender",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Tender",
+   "options": "Tender"
+  },
+  {
+   "fieldname": "section_break_gsem",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mode_of_emd",
+   "fieldtype": "Select",
+   "label": "Mode of EMD"
+  },
+  {
+   "fieldname": "emd_amount",
+   "fieldtype": "Currency",
+   "label": "EMD Amount"
+  },
+  {
+   "fieldname": "bid_detail",
+   "fieldtype": "Data",
+   "label": "Bid Detail"
+  },
+  {
+   "fieldname": "column_break_dssq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2024-02-06 23:47:00.277525",
+ "modified_by": "Administrator",
+ "module": "Bid Management",
+ "name": "Tender",
+ "naming_rule": "By \"Naming Series\" field",
+ "nsm_parent_field": "parent_tender",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
