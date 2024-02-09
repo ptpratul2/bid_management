@@ -1,66 +1,77 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-02-06 23:45:22.458643",
+ "autoname": "naming_series:",
+ "creation": "2024-02-07 16:25:24.912105",
+ "default_view": "List",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "section_break_juao",
-  "lft",
-  "rgt",
-  "is_group",
-  "old_parent",
-  "parent_bid"
+  "bid_end_datetime",
+  "bid_opening_datetime",
+  "column_break_ohnr",
+  "bid_offer_validity_days",
+  "close_date",
+  "section_break_suca",
+  "naming_series",
+  "offer_price",
+  "total_amount"
  ],
  "fields": [
   {
-   "fieldname": "section_break_juao",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "label": "Series"
+  },
+  {
+   "fieldname": "offer_price",
+   "fieldtype": "Table",
+   "label": "Offer Price",
+   "options": "Items and Rates"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Data",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "bid_end_datetime",
+   "fieldtype": "Datetime",
+   "label": "Bid End Date"
+  },
+  {
+   "fieldname": "bid_opening_datetime",
+   "fieldtype": "Datetime",
+   "label": "Bid Opening Date"
+  },
+  {
+   "fieldname": "section_break_suca",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "lft",
+   "fieldname": "bid_offer_validity_days",
    "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Left",
-   "no_copy": 1,
-   "read_only": 1
+   "label": "Bid Offer Validity (Days)"
   },
   {
-   "fieldname": "rgt",
-   "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Right",
-   "no_copy": 1,
-   "read_only": 1
+   "fieldname": "column_break_ohnr",
+   "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "is_group",
-   "fieldtype": "Check",
-   "label": "Is Group"
-  },
-  {
-   "fieldname": "old_parent",
-   "fieldtype": "Link",
-   "label": "Old Parent",
-   "options": "Bid"
-  },
-  {
-   "fieldname": "parent_bid",
-   "fieldtype": "Link",
-   "ignore_user_permissions": 1,
-   "label": "Parent Bid",
-   "options": "Bid"
+   "fieldname": "close_date",
+   "fieldtype": "Datetime",
+   "label": "Close Date"
   }
  ],
  "index_web_pages_for_search": 1,
- "is_tree": 1,
+ "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-02-06 23:46:28.226560",
+ "modified": "2024-02-08 16:14:36.286765",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Bid",
- "nsm_parent_field": "parent_bid",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -78,5 +89,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

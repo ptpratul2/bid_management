@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Tender(Document):
+class Query(Document):
 	pass
