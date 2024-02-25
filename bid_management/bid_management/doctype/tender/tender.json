@@ -9,14 +9,13 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "customer",
-  "address",
+  "customer_name",
   "contact",
   "column_break_xubfy",
   "tender_no",
   "type",
   "source",
-  "is_gem_tender",
+  "tender_owner",
   "column_break_kkcc5",
   "pre_bid_conference_date",
   "pre_bid_conference_venue",
@@ -56,20 +55,6 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series"
-  },
-  {
-   "fieldname": "customer",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Customer",
-   "options": "Customer",
-   "reqd": 1
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Link",
-   "label": "Address",
-   "options": "Address"
   },
   {
    "fieldname": "contact",
@@ -198,11 +183,6 @@
    "options": "Company"
   },
   {
-   "fieldname": "contact_tab",
-   "fieldtype": "Tab Break",
-   "label": "Contact"
-  },
-  {
    "fieldname": "submission_date",
    "fieldtype": "Date",
    "label": "Submission Date"
@@ -264,12 +244,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "is_gem_tender",
-   "fieldtype": "Check",
-   "label": "Is GeM Tender?"
-  },
-  {
    "fieldname": "items_tab",
    "fieldtype": "Tab Break",
    "label": "Items"
@@ -278,12 +252,31 @@
    "fieldname": "item_category",
    "fieldtype": "Data",
    "label": "Item Category"
+  },
+  {
+   "fieldname": "contact_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tender_owner",
+   "fieldtype": "Link",
+   "label": "Tender Owner",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-02-08 16:05:02.390012",
+ "modified": "2024-02-25 22:58:19.485761",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
