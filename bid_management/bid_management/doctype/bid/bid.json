@@ -15,7 +15,6 @@
   "close_date",
   "section_break_suca",
   "naming_series",
-  "offer_price",
   "total_amount"
  ],
  "fields": [
@@ -23,12 +22,6 @@
    "fieldname": "naming_series",
    "fieldtype": "Data",
    "label": "Series"
-  },
-  {
-   "fieldname": "offer_price",
-   "fieldtype": "Table",
-   "label": "Offer Price",
-   "options": "Items and Rates"
   },
   {
    "fieldname": "total_amount",
@@ -67,7 +60,7 @@
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-02-08 16:14:36.286765",
+ "modified": "2024-03-13 00:12:42.970427",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Bid",
