@@ -1,0 +1,46 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"D3KQbWw3aR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tenders</span>\",\"col\":12}},{\"id\":\"X6h7vyfS1B\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tender\",\"col\":3}},{\"id\":\"xmyaEctt2Q\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bid\",\"col\":3}}]",
+ "creation": "2024-03-11 15:53:29.043857",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "project-2",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Tenders",
+ "links": [],
+ "modified": "2024-03-11 16:04:24.070241",
+ "modified_by": "h.shivhare@respoproducts.com",
+ "module": "Bid Management",
+ "name": "Tenders",
+ "number_cards": [],
+ "owner": "h.shivhare@respoproducts.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 39.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Tender",
+   "link_to": "Tender",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Bid",
+   "link_to": "Bid",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Tenders"
+}
