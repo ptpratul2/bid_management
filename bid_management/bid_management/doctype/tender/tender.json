@@ -53,8 +53,7 @@
   "additional_info_section",
   "sales_order",
   "project",
-  "column_break_qlbje",
-  "bank_guarantee"
+  "column_break_qlbje"
  ],
  "fields": [
   {
@@ -147,12 +146,6 @@
   {
    "fieldname": "column_break_qlbje",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "bank_guarantee",
-   "fieldtype": "Link",
-   "label": "Bank Guarantee",
-   "options": "Bank Guarantee"
   },
   {
    "fieldname": "type",
@@ -313,7 +306,7 @@
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-03-12 23:35:18.946322",
+ "modified": "2024-03-13 00:17:09.579609",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
