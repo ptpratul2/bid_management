@@ -10,23 +10,29 @@
  "field_order": [
   "naming_series",
   "customer_name",
-  "contact",
+  "description",
   "column_break_xubfy",
   "tender_no",
   "type",
   "source",
+  "tender_validity",
   "tender_owner",
   "column_break_kkcc5",
+  "due_date",
   "pre_bid_conference_date",
   "pre_bid_conference_venue",
-  "due_date",
   "company",
+  "section_break_yjef",
+  "mse_purchase_preference",
+  "mii_purchase_preference",
+  "column_break_nizu",
+  "third_party_inspection",
+  "column_break_vraw",
   "section_break_lgvnz",
   "mode_of_emd",
   "emd",
   "bid",
   "column_break_67jkb",
-  "description",
   "status",
   "submission_date",
   "price_bid_opening_section",
@@ -57,18 +63,13 @@
    "label": "Series"
   },
   {
-   "fieldname": "contact",
-   "fieldtype": "Link",
-   "label": "Contact",
-   "options": "Contact"
-  },
-  {
    "fieldname": "column_break_xubfy",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "tender_no",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "in_list_view": 1,
    "label": "Tender No",
    "reqd": 1,
@@ -272,12 +273,47 @@
    "fieldtype": "Link",
    "label": "EMD",
    "options": "EMD"
+  },
+  {
+   "fieldname": "section_break_yjef",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mse_purchase_preference",
+   "fieldtype": "Select",
+   "label": "MSE Purchase Preference",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "mii_purchase_preference",
+   "fieldtype": "Select",
+   "label": "MII Purchase Preference",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_nizu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vraw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tender_validity",
+   "fieldtype": "Int",
+   "label": "Tender Validity"
+  },
+  {
+   "default": "0",
+   "fieldname": "third_party_inspection",
+   "fieldtype": "Check",
+   "label": "Third Party Inspection"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-03-12 16:00:50.239776",
+ "modified": "2024-03-12 23:35:18.946322",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
