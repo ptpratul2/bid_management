@@ -23,7 +23,7 @@
   "company",
   "section_break_lgvnz",
   "mode_of_emd",
-  "emd_amount",
+  "emd",
   "bid",
   "column_break_67jkb",
   "description",
@@ -80,12 +80,12 @@
   },
   {
    "fieldname": "pre_bid_conference_date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Pre Bid Conference Date"
   },
   {
    "fieldname": "pre_bid_conference_venue",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Pre Bid Conference Venue"
   },
   {
@@ -104,11 +104,6 @@
    "fieldtype": "Select",
    "label": "Mode of EMD",
    "options": "\nOnline\nOffline"
-  },
-  {
-   "fieldname": "emd_amount",
-   "fieldtype": "Currency",
-   "label": "EMD Amount"
   },
   {
    "fieldname": "column_break_67jkb",
@@ -271,12 +266,18 @@
    "fieldtype": "Link",
    "label": "Tender Owner",
    "options": "User"
+  },
+  {
+   "fieldname": "emd",
+   "fieldtype": "Link",
+   "label": "EMD",
+   "options": "EMD"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-02-25 22:58:19.485761",
+ "modified": "2024-03-12 16:00:50.239776",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
