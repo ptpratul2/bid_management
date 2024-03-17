@@ -10,31 +10,39 @@
  "field_order": [
   "naming_series",
   "customer_name",
+  "office_name",
   "description",
   "column_break_xubfy",
   "tender_no",
   "type",
   "source",
-  "tender_validity",
   "tender_owner",
   "column_break_kkcc5",
-  "due_date",
-  "pre_bid_conference_date",
-  "pre_bid_conference_venue",
+  "tender_validity",
+  "expiry_date",
+  "submission_deadline",
   "company",
   "section_break_yjef",
   "mse_purchase_preference",
   "mii_purchase_preference",
+  "inspection_required",
+  "bid_to_ra_enabled",
   "column_break_nizu",
-  "third_party_inspection",
-  "column_break_vraw",
+  "pre_bid_conference_date",
+  "pre_bid_conference_venue",
   "section_break_lgvnz",
-  "mode_of_emd",
   "emd",
   "bid",
   "column_break_67jkb",
   "status",
   "submission_date",
+  "section_break_ctej",
+  "currency",
+  "column_break_yywn",
+  "exchange_rate",
+  "column_break_pnvi",
+  "estimated_tender_amount",
+  "estimated_tender_amount_company_currency",
   "price_bid_opening_section",
   "price_bid_opening",
   "contact_tab",
@@ -53,13 +61,15 @@
   "additional_info_section",
   "sales_order",
   "project",
-  "column_break_qlbje"
+  "column_break_qlbje",
+  "bank_guarantee"
  ],
  "fields": [
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Series"
+   "label": "Series",
+   "options": "TDR-"
   },
   {
    "fieldname": "column_break_xubfy",
@@ -89,21 +99,8 @@
    "label": "Pre Bid Conference Venue"
   },
   {
-   "fieldname": "due_date",
-   "fieldtype": "Datetime",
-   "in_list_view": 1,
-   "label": "Submission Deadline",
-   "reqd": 1
-  },
-  {
    "fieldname": "section_break_lgvnz",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "mode_of_emd",
-   "fieldtype": "Select",
-   "label": "Mode of EMD",
-   "options": "\nOnline\nOffline"
   },
   {
    "fieldname": "column_break_67jkb",
@@ -201,7 +198,7 @@
   {
    "fieldname": "primary_contact_section",
    "fieldtype": "Section Break",
-   "label": "Primary Contact"
+   "label": "Contact"
   },
   {
    "fieldname": "contact_person",
@@ -239,13 +236,9 @@
   },
   {
    "fieldname": "item_category",
-   "fieldtype": "Data",
-   "label": "Item Category"
-  },
-  {
-   "fieldname": "contact_tab",
-   "fieldtype": "Tab Break",
-   "label": "Contact"
+   "fieldtype": "Table",
+   "label": "Item Category",
+   "options": "Tender Item"
   },
   {
    "fieldname": "customer_name",
@@ -288,25 +281,88 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_vraw",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "tender_validity",
    "fieldtype": "Int",
    "label": "Tender Validity"
   },
   {
-   "default": "0",
-   "fieldname": "third_party_inspection",
-   "fieldtype": "Check",
-   "label": "Third Party Inspection"
+   "fieldname": "expiry_date",
+   "fieldtype": "Read Only",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "bid_to_ra_enabled",
+   "fieldtype": "Select",
+   "label": "Bid to RA Enabled",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_ctej",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_yywn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exchange_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate"
+  },
+  {
+   "fieldname": "column_break_pnvi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimated_tender_amount",
+   "fieldtype": "Currency",
+   "label": "Estimated Tender Amount"
+  },
+  {
+   "fieldname": "estimated_tender_amount_company_currency",
+   "fieldtype": "Currency",
+   "label": "Estimated Tender Amount (Company Currency)"
+  },
+  {
+   "fieldname": "submission_deadline",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Submission Deadline",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank_guarantee",
+   "fieldtype": "Link",
+   "label": "Bank Guarantee",
+   "options": "Bank Guarantee"
+  },
+  {
+   "fieldname": "inspection_required",
+   "fieldtype": "Select",
+   "label": "Inspection Required",
+   "options": "No\nFirst Party\nThird Party"
+  },
+  {
+   "fieldname": "office_name",
+   "fieldtype": "Data",
+   "label": "Office Name"
+  },
+  {
+   "fieldname": "contact_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contact"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-03-13 00:17:09.579609",
+ "modified": "2024-03-17 16:55:43.405829",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
