@@ -130,6 +130,7 @@
    "options": "Price Bid Opening"
   },
   {
+   "depends_on": "eval:!doc.__islocal",
    "fieldname": "queries_tab",
    "fieldtype": "Tab Break",
    "label": "Queries"
@@ -362,7 +363,7 @@
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-03-17 16:55:43.405829",
+ "modified": "2024-03-26 11:51:14.344196",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
