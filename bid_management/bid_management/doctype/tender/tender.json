@@ -36,6 +36,7 @@
   "column_break_67jkb",
   "status",
   "submission_date",
+  "reason_for_regret",
   "section_break_ctej",
   "currency",
   "column_break_yywn",
@@ -50,19 +51,20 @@
   "contact_person",
   "column_break_qdnm",
   "contact_email",
+  "column_break_imaf",
   "contact_mobile",
   "phone",
-  "column_break_imaf",
   "items_tab",
   "item_category",
   "queries_tab",
   "query",
   "more_info_tab",
   "additional_info_section",
-  "sales_order",
+  "quotation",
   "project",
   "column_break_qlbje",
-  "bank_guarantee"
+  "bank_guarantee",
+  "sales_order"
  ],
  "fields": [
   {
@@ -139,7 +141,7 @@
    "fieldname": "query",
    "fieldtype": "Table",
    "label": "Query",
-   "options": "Query"
+   "options": "Tender Query"
   },
   {
    "fieldname": "column_break_qlbje",
@@ -358,12 +360,23 @@
    "fieldname": "contact_tab",
    "fieldtype": "Tab Break",
    "label": "Contact"
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation"
+  },
+  {
+   "fieldname": "reason_for_regret",
+   "fieldtype": "Data",
+   "label": "Reason for Regret"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-03-26 11:51:14.344196",
+ "modified": "2024-08-20 23:42:44.409330",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
@@ -400,6 +413,16 @@
    "read": 1,
    "report": 1,
    "role": "Tender User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
    "share": 1,
    "write": 1
   }
