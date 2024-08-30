@@ -28,6 +28,7 @@
   "inspection_required",
   "bid_to_ra_enabled",
   "column_break_nizu",
+  "pre_bid_conference",
   "pre_bid_conference_date",
   "pre_bid_conference_venue",
   "section_break_lgvnz",
@@ -91,11 +92,13 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.pre_bid_conference==\"Yes\";",
    "fieldname": "pre_bid_conference_date",
    "fieldtype": "Datetime",
    "label": "Pre Bid Conference Date"
   },
   {
+   "depends_on": "eval:doc.pre_bid_conference==\"Yes\";",
    "fieldname": "pre_bid_conference_venue",
    "fieldtype": "Small Text",
    "label": "Pre Bid Conference Venue"
@@ -161,9 +164,8 @@
   },
   {
    "fieldname": "bid",
-   "fieldtype": "Link",
-   "label": "Bid",
-   "options": "Bid"
+   "fieldtype": "Data",
+   "label": "Bid"
   },
   {
    "fieldname": "company",
@@ -286,7 +288,7 @@
   {
    "fieldname": "tender_validity",
    "fieldtype": "Int",
-   "label": "Tender Validity"
+   "label": "Tender Validity (in days)"
   },
   {
    "fieldname": "expiry_date",
@@ -300,8 +302,10 @@
    "options": "\nYes\nNo"
   },
   {
+   "collapsible": 1,
    "fieldname": "section_break_ctej",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Currency"
   },
   {
    "fieldname": "currency",
@@ -371,12 +375,18 @@
    "fieldname": "reason_for_regret",
    "fieldtype": "Data",
    "label": "Reason for Regret"
+  },
+  {
+   "fieldname": "pre_bid_conference",
+   "fieldtype": "Select",
+   "label": "Pre Bid Conference",
+   "options": "\nYes\nNo"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-08-20 23:42:44.409330",
+ "modified": "2024-08-30 14:55:55.179662",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",

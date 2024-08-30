@@ -13,8 +13,8 @@
  "is_hidden": 0,
  "label": "Tenders",
  "links": [],
- "modified": "2024-03-12 22:48:21.941637",
- "modified_by": "h.shivhare@respoproducts.com",
+ "modified": "2024-08-30 14:18:24.612012",
+ "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tenders",
  "number_cards": [],
@@ -30,14 +30,6 @@
    "doc_view": "List",
    "label": "Tender",
    "link_to": "Tender",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Bid",
-   "link_to": "Bid",
    "stats_filter": "[]",
    "type": "DocType"
   }
