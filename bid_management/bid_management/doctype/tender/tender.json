@@ -22,6 +22,7 @@
   "expiry_date",
   "submission_deadline",
   "company",
+  "tender_stage",
   "section_break_yjef",
   "mse_purchase_preference",
   "mii_purchase_preference",
@@ -37,7 +38,7 @@
   "column_break_67jkb",
   "status",
   "submission_date",
-  "reason_for_regret",
+  "reason_for_reject",
   "section_break_ctej",
   "currency",
   "column_break_yywn",
@@ -120,7 +121,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nTo Be Quoted\nQuoted\nNot Quoted\nTechnical Bid\nTechnical Evaluation\nPrice Bid\nNegotiation\nAuction\nWon\nLost\nCancelled\nRegret"
+   "options": "Open\nClosed\nBid Submitted\nUnder Evaluation\nAwarded\nCancelled\nOn Hold\nRejected"
   },
   {
    "fieldname": "price_bid_opening_section",
@@ -174,9 +175,11 @@
    "options": "Company"
   },
   {
+   "depends_on": "eval:doc.status !== \"Open\" && doc.status !== \"Closed\" && doc.status !== \"Cancelled\" && doc.status !== \"Rejected\";",
    "fieldname": "submission_date",
-   "fieldtype": "Date",
-   "label": "Submission Date"
+   "fieldtype": "Datetime",
+   "label": "Submission Date",
+   "read_only_depends_on": "eval:doc.status==\"Under Evaluation\" && doc.status==\"Awarded\";"
   },
   {
    "fieldname": "more_info_tab",
@@ -372,21 +375,28 @@
    "options": "Quotation"
   },
   {
-   "fieldname": "reason_for_regret",
-   "fieldtype": "Data",
-   "label": "Reason for Regret"
-  },
-  {
    "fieldname": "pre_bid_conference",
    "fieldtype": "Select",
    "label": "Pre Bid Conference",
    "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "tender_stage",
+   "fieldtype": "Select",
+   "label": "Tender Stage",
+   "options": "\nTechnical Evaluation\nFinancial Bid Opening\nFinancial Evaluation\nNegotiation\nReverse Auction\nContract Awarded"
+  },
+  {
+   "depends_on": "eval:doc.status==\"Rejected\";",
+   "fieldname": "reason_for_reject",
+   "fieldtype": "Data",
+   "label": "Reason for Reject"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-08-30 14:55:55.179662",
+ "modified": "2024-09-08 20:51:02.842209",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
