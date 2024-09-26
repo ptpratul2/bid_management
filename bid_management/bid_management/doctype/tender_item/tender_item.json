@@ -6,9 +6,16 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "tender_item",
+  "item",
+  "delivery_days",
+  "column_break_xyrl",
   "qty",
-  "uom"
+  "uom",
+  "section_break_nojc",
+  "consignee_address",
+  "address_display",
+  "column_break_qdxq",
+  "reporting_officer"
  ],
  "fields": [
   {
@@ -30,15 +37,50 @@
    "oldfieldtype": "Currency"
   },
   {
-   "fieldname": "tender_item",
+   "fieldname": "reporting_officer",
+   "fieldtype": "Link",
+   "label": "Reporting Officer",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "consignee_address",
+   "fieldtype": "Link",
+   "label": "Consignee Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "delivery_days",
+   "fieldtype": "Int",
+   "label": "Delivery Days"
+  },
+  {
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_nojc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qdxq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xyrl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Tender Item"
+   "label": "Item"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2024-08-20 22:51:57.776860",
+ "modified": "2024-09-26 23:14:28.605322",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender Item",

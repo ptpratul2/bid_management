@@ -57,7 +57,7 @@
   "contact_mobile",
   "phone",
   "items_tab",
-  "item_category",
+  "items",
   "queries_tab",
   "query",
   "more_info_tab",
@@ -243,12 +243,6 @@
    "label": "Items"
   },
   {
-   "fieldname": "item_category",
-   "fieldtype": "Table",
-   "label": "Item Category",
-   "options": "Tender Item"
-  },
-  {
    "fieldname": "customer_name",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -391,12 +385,18 @@
    "fieldname": "reason_for_reject",
    "fieldtype": "Data",
    "label": "Reason for Reject"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Tender Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-09-08 20:51:02.842209",
+ "modified": "2024-09-26 23:13:54.301416",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
