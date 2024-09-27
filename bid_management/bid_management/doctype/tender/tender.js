@@ -4,51 +4,38 @@ frappe.ui.form.on('Tender', {
             return {
                 filters: {
                     link_doctype: 'Customer',
-                    link_name: frm.doc.customer_name
+                    link_name: frm.doc.organization
                 }
             };
         });
-         frm.set_query('sales_order', function() {
+        frm.set_query('sales_order', function() {
             return {
                 filters: {
-                    customer: frm.doc.customer_name,
+                    customer: frm.doc.organization,
                     docstatus:1
+                }
+            };
+        });
+        frm.set_query('consignee_address', 'items', function(doc, cdt, cdn) {
+            var d = locals[cdt][cdn];
+            return {
+                filters: {
+                    link_doctype: "Customer", // Linking with Customer DocType
+                    link_name: frm.doc.organization // Filtering by parent organization field
+                }
+            };
+        });
+        frm.set_query('reporting_officer', 'items', function(doc, cdt, cdn) {
+            var d = locals[cdt][cdn];
+            return {
+                filters: {
+                    link_doctype: "Customer", // Linking with Customer DocType
+                    link_name: frm.doc.organization // Filtering by parent organization field
                 }
             };
         });
     }
 });
-
-// frappe.ui.form.on('Tender', {
-//     onload: function(frm) {
-//         // Apply filter for consignee_address field in the tender_item child table
-//         frm.fields_dict['tender_item'].grid.get_field('consignee_address').get_query = function(doc, cdt, cdn) {
-//             let child = locals[cdt][cdn];
-//             console.log(child);
-//             // if (!frm.doc.customer_name) {
-//             //     frappe.msgprint(__('Please select a Customer first.'));
-//             //     return false;
-//             // }
-//             return {
-//                 filters: {
-//                     customer: frm.doc.customer_name
-//                 }
-//             };
-//         };
-//     }
-// });
-
-// frappe.ui.form.on("Tender", "refresh", function(frm) {
-//     frm.fields_dict['tender_item'].grid.get_field('consignee_address').get_query = function(doc, cdt, cdn) {
-//         var child = locals[cdt][cdn];
-//         //console.log(child);
-//         return {    
-//             filters:[
-//                 ['IS_IT_OK_FIELD', '=', child.CHECKBOX_FIELD]
-//             ]
-//         }
-//     }
-// });
 
 frappe.ui.form.on('Tender Item', {
     consignee_address: function(frm, cdt, cdn) {

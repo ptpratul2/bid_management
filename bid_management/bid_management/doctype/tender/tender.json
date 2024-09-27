@@ -9,7 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "customer_name",
+  "organization",
   "office_name",
   "description",
   "column_break_xubfy",
@@ -243,14 +243,6 @@
    "label": "Items"
   },
   {
-   "fieldname": "customer_name",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Customer Name",
-   "options": "Customer",
-   "reqd": 1
-  },
-  {
    "fieldname": "tender_owner",
    "fieldtype": "Link",
    "label": "Tender Owner",
@@ -391,12 +383,20 @@
    "fieldtype": "Table",
    "label": "Items",
    "options": "Tender Item"
+  },
+  {
+   "fieldname": "organization",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Organization",
+   "options": "Customer",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-09-26 23:13:54.301416",
+ "modified": "2024-09-27 23:54:42.981437",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
