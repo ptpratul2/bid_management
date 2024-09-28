@@ -34,7 +34,7 @@
   "pre_bid_conference_venue",
   "section_break_lgvnz",
   "emd",
-  "bid",
+  "quotation",
   "column_break_67jkb",
   "status",
   "submission_date",
@@ -62,11 +62,10 @@
   "query",
   "more_info_tab",
   "additional_info_section",
-  "quotation",
   "project",
+  "sales_order",
   "column_break_qlbje",
-  "bank_guarantee",
-  "sales_order"
+  "bank_guarantee"
  ],
  "fields": [
   {
@@ -162,11 +161,6 @@
    "fieldtype": "Select",
    "label": "Source",
    "options": "\nDirect\nGeM\nOther"
-  },
-  {
-   "fieldname": "bid",
-   "fieldtype": "Data",
-   "label": "Bid"
   },
   {
    "fieldname": "company",
@@ -357,7 +351,7 @@
   {
    "fieldname": "quotation",
    "fieldtype": "Link",
-   "label": "Quotation",
+   "label": "Bid/Quotation",
    "options": "Quotation"
   },
   {
@@ -396,7 +390,7 @@
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-09-28 13:59:09.331532",
+ "modified": "2024-09-28 16:25:51.271575",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
