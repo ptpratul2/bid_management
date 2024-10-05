@@ -93,6 +93,7 @@ frappe.ui.form.on('Tender', {
             method: "bid_management.bid_management.doctype.tender.tender.make_bank_guarantee",
             frm: frm
         });
+    }
 });
 
 frappe.ui.form.on('Tender Item', {
