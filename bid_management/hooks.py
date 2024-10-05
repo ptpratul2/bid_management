@@ -32,6 +32,8 @@ app_license = "mit"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+doctype_list_js = {"EMD" : "bid_management/emd_management/doctype/emd/emd_list.js"}
+doctype_js = {"Journal Entry": "public/js/journal_entry.js"}
 
 # Svg Icons
 # ------------------
@@ -129,6 +131,22 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+	
+	# "EMD": {"on_update_after_submit": "bid_management.emd_management.doctype.emd.emd.on_update_after_submit"},
+	"Journal Entry":
+	{
+		"on_cancel": "bid_management.emd_management.doc_events.journal_entry.on_cancel"
+	},
+	"EMD":
+	{
+		"validate":"bid_management.emd_management.doctype.emd.emd.validate"
+	},
+     "Project": {
+        "after_insert": "bid_management.bid_management.doctype.tender.tender.update_tender_with_project"
+    }	
+}
+
 
 # Scheduled Tasks
 # ---------------
@@ -226,4 +244,15 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+# doc_events = {
+#     "Sales Order": {
+#         "on_update": "bid_management.api.send_data_to_node_app"
+#     }
+# }
 
+fixtures = [
+       {
+        "dt": "Property Setter", 
+        "filters":[["name", "in", ['EMD-payment_mode-hidden','EMD-payment_mode-reqd','EMD-receipient-fetch_from','EMD-naming_series-options','EMD-cost_center-fetch_from', 'EMD-write_off_account-allow_on_submit', 'EMD-bank_account-depends_on', 'EMD-cancel_forfeited-depends_on', 'EMD-cost_center-fetch_if_empty', 'EMD-reference_date-default', 'Journal Entry-voucher_type-options']]]
+      },
+]
