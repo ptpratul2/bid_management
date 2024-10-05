@@ -141,10 +141,12 @@ doc_events = {
 	"EMD":
 	{
 		"validate":"bid_management.emd_management.doctype.emd.emd.validate"
-	}
-	
-	
+	},
+     "Project": {
+        "after_insert": "bid_management.bid_management.doctype.tender.tender.update_tender_with_project"
+    }	
 }
+
 
 # Scheduled Tasks
 # ---------------
