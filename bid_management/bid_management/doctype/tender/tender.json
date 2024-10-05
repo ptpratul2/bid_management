@@ -65,7 +65,8 @@
   "project",
   "sales_order",
   "column_break_qlbje",
-  "bank_guarantee"
+  "bank_guarantee",
+  "connections_tab"
  ],
  "fields": [
   {
@@ -385,12 +386,18 @@
    "label": "Organization",
    "options": "Customer",
    "reqd": 1
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-09-28 16:25:51.271575",
+ "modified": "2024-10-05 17:30:42.576234",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
