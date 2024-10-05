@@ -35,35 +35,9 @@ frappe.ui.form.on('Tender', {
                 }
             };
         });
-    }
-});
-
-frappe.ui.form.on('Tender Item', {
-    consignee_address: function(frm, cdt, cdn) {
-        let row = locals[cdt][cdn];
-        if (row.consignee_address) {
-            // Fetch the address display using frappe.call
-            frappe.call({
-                method: "frappe.contacts.doctype.address.address.get_address_display",
-                args: {
-                    address_dict: row.consignee_address
-                },
-                callback: function(r) {
-                    if (r.message) {
-                        frappe.model.set_value(cdt, cdn, 'address_display', r.message);
-                    }
-                }
-            });
-        } else {
-            // Clear the address_display if no consignee_address is set
-            frappe.model.set_value(cdt, cdn, 'address_display', '');
-        }
-    }
-});
-
-
-frappe.ui.form.on('Tender', {
-    refresh: function(frm) {
+    },
+	
+	refresh: function(frm) {
         if (frm.doc.docstatus === 0) {
             // EMD button
                frm.add_custom_button(__('EMD'), () => frm.events.make_emd(frm), __('Create'));            
@@ -119,6 +93,27 @@ frappe.ui.form.on('Tender', {
             method: "bid_management.bid_management.doctype.tender.tender.make_bank_guarantee",
             frm: frm
         });
-    }
 });
 
+frappe.ui.form.on('Tender Item', {
+    consignee_address: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        if (row.consignee_address) {
+            // Fetch the address display using frappe.call
+            frappe.call({
+                method: "frappe.contacts.doctype.address.address.get_address_display",
+                args: {
+                    address_dict: row.consignee_address
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        frappe.model.set_value(cdt, cdn, 'address_display', r.message);
+                    }
+                }
+            });
+        } else {
+            // Clear the address_display if no consignee_address is set
+            frappe.model.set_value(cdt, cdn, 'address_display', '');
+        }
+    }
+});
