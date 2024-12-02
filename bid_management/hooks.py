@@ -131,6 +131,12 @@ app_include_js = "/assets/bid_management/js/globally_changes.js"
 # 	}
 # }
 
+doc_events = {
+    "*": {
+        "before_save": "bid_management.utils.validate_duplicate_permission"
+    }
+}
+
 # Scheduled Tasks
 # ---------------
 
