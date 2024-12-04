@@ -1,6 +1,4 @@
-$(window).on('hashchange', page_changed);
-$(window).on('load', page_changed);
-
+frappe.router.on("change", page_changed)
 function page_changed(event) {
     // Waiting for the page to load completely
     frappe.after_ajax(function () {
