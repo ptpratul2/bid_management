@@ -318,6 +318,7 @@
    "fetch_from": "contact_person.mobile_no",
    "fieldname": "contact_mobile",
    "fieldtype": "Data",
+   "options":"Phone",
    "label": "Contact Mobile"
   },
   {
