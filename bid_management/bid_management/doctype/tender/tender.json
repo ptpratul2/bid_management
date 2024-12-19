@@ -2,55 +2,54 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2024-02-07 16:25:59.478199",
- "default_view": "List",
+ "creation": "2024-12-12 22:06:46.313076",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "section_break_9bwa",
   "naming_series",
   "organization",
-  "office_name",
+  "location",
   "description",
-  "column_break_xubfy",
+  "column_break_hjjl",
+  "tender_no",
   "type",
   "source",
   "tender_owner",
   "company",
-  "column_break_kkcc5",
+  "column_break_tfbo",
   "publish_date",
   "submission_deadline",
   "bid_opening_date",
   "tender_validity",
   "validity_end_date",
-  "tender_stage",
+  "stage",
   "status",
-  "section_break_yjef",
+  "section_break_kyha",
   "mse_purchase_preference",
   "mii_purchase_preference",
-  "column_break_cdxi",
+  "column_break_dads",
   "inspection_required",
   "bid_to_ra_enabled",
-  "column_break_nizu",
+  "column_break_lqog",
   "pre_bid_conference",
-  "column_break_vncz",
+  "column_break_qiej",
   "pre_bid_conference_date",
   "pre_bid_conference_venue",
   "submission_date",
-  "reason_for_reject",
-  "section_break_ctej",
+  "reason_for_regret",
+  "currency_section",
   "currency",
-  "column_break_yywn",
+  "column_break_enna",
   "exchange_rate",
-  "column_break_pnvi",
+  "column_break_radc",
   "estimated_tender_amount",
   "estimated_tender_amount_company_currency",
   "contact_tab",
-  "primary_contact_section",
   "contact_person",
-  "column_break_qdnm",
+  "column_break_vhqd",
   "contact_email",
-  "column_break_imaf",
+  "column_break_iutr",
   "contact_mobile",
   "phone",
   "items_tab",
@@ -58,22 +57,32 @@
   "queries_tab",
   "query",
   "price_bid_tab",
-  "price_bid_opening_section",
   "price_bid_opening",
   "more_info_tab",
   "additional_info_section",
   "amended_from",
-  "connections",
-  "section_break_lgvnz",
-  "tender_no",
   "emd",
   "project",
-  "column_break_67jkb",
+  "column_break_agao",
   "sales_order",
   "bank_guarantee",
-  "quotation"
+  "bidquotation"
  ],
  "fields": [
+  {
+   "fieldname": "section_break_9bwa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Tender",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
@@ -89,9 +98,9 @@
    "reqd": 1
   },
   {
-   "fieldname": "office_name",
+   "fieldname": "location",
    "fieldtype": "Data",
-   "label": "Office Name"
+   "label": "Location"
   },
   {
    "fieldname": "description",
@@ -99,14 +108,14 @@
    "label": "Description"
   },
   {
-   "fieldname": "column_break_xubfy",
+   "fieldname": "column_break_hjjl",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": "\nOnline\nOffline"
+   "options": "\nOffline\nOnline"
   },
   {
    "fieldname": "source",
@@ -127,8 +136,9 @@
    "options": "Company"
   },
   {
-   "fieldname": "column_break_kkcc5",
-   "fieldtype": "Column Break"
+   "fieldname": "column_break_tfbo",
+   "fieldtype": "Column Break",
+   "options": "\nTechnical Evaluation\nFinancial Bid Opening\nFinancial Evaluation\nNegotiation\nReverse Auction\nContract Awarded"
   },
   {
    "fieldname": "publish_date",
@@ -136,7 +146,6 @@
    "label": "Publish Date"
   },
   {
-   "allow_on_submit": 1,
    "fieldname": "submission_deadline",
    "fieldtype": "Datetime",
    "in_list_view": 1,
@@ -144,9 +153,8 @@
    "reqd": 1
   },
   {
-   "allow_on_submit": 1,
    "fieldname": "bid_opening_date",
-   "fieldtype": "Datetime",
+   "fieldtype": "Date",
    "label": "Bid Opening Date"
   },
   {
@@ -161,24 +169,13 @@
    "read_only": 1
   },
   {
-    "fieldname": "tender_stage",
-    "fieldtype": "Select",
-    "in_list_view": 1,
-    "label": "Tender Stage",
-    "options": "\nTechnical Evaluation\nFinancial Bid Opening\nFinancial Evaluation\nNegotiation\nReverse Auction\nContract Awarded",
-    "allow_on_submit": 1,
-    "depends_on": "eval:doc.status != 'Open' && doc.docstatus == 1"
-    },
-  {
-   "allow_on_submit": 1,
-   "fieldname": "status",
+   "depends_on": "eval:doc.status != 'Open' && doc.docstatus == 1",
+   "fieldname": "stage",
    "fieldtype": "Select",
-   "label": "Status",
-   "options": "Open\nClosed\nSubmitted\nWon\nLost\nCancelled\nOn Hold\nRegret",
-   "reqd": 1
+   "label": "Stage"
   },
   {
-   "fieldname": "section_break_yjef",
+   "fieldname": "section_break_kyha",
    "fieldtype": "Section Break"
   },
   {
@@ -194,14 +191,14 @@
    "options": "\nYes\nNo"
   },
   {
-   "fieldname": "column_break_cdxi",
+   "fieldname": "column_break_dads",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "inspection_required",
    "fieldtype": "Select",
    "label": "Inspection Required",
-   "options": "No\nFirst Party\nThird Party"
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "bid_to_ra_enabled",
@@ -210,7 +207,7 @@
    "options": "\nYes\nNo"
   },
   {
-   "fieldname": "column_break_nizu",
+   "fieldname": "column_break_lqog",
    "fieldtype": "Column Break"
   },
   {
@@ -220,7 +217,7 @@
    "options": "\nYes\nNo"
   },
   {
-   "fieldname": "column_break_vncz",
+   "fieldname": "column_break_qiej",
    "fieldtype": "Column Break"
   },
   {
@@ -245,13 +242,13 @@
   },
   {
    "depends_on": "eval:doc.status==\"Rejected\";",
-   "fieldname": "reason_for_reject",
+   "fieldname": "reason_for_regret",
    "fieldtype": "Data",
-   "label": "Reason for Reject"
+   "label": "Reason for Regret"
   },
   {
    "collapsible": 1,
-   "fieldname": "section_break_ctej",
+   "fieldname": "currency_section",
    "fieldtype": "Section Break",
    "label": "Currency"
   },
@@ -262,7 +259,7 @@
    "options": "Currency"
   },
   {
-   "fieldname": "column_break_yywn",
+   "fieldname": "column_break_enna",
    "fieldtype": "Column Break"
   },
   {
@@ -271,7 +268,7 @@
    "label": "Exchange Rate"
   },
   {
-   "fieldname": "column_break_pnvi",
+   "fieldname": "column_break_radc",
    "fieldtype": "Column Break"
   },
   {
@@ -290,18 +287,13 @@
    "label": "Contact"
   },
   {
-   "fieldname": "primary_contact_section",
-   "fieldtype": "Section Break",
-   "label": "Contact"
-  },
-  {
    "fieldname": "contact_person",
    "fieldtype": "Link",
    "label": "Contact Person",
    "options": "Contact"
   },
   {
-   "fieldname": "column_break_qdnm",
+   "fieldname": "column_break_vhqd",
    "fieldtype": "Column Break"
   },
   {
@@ -311,14 +303,13 @@
    "label": "Contact Email"
   },
   {
-   "fieldname": "column_break_imaf",
+   "fieldname": "column_break_iutr",
    "fieldtype": "Column Break"
   },
   {
    "fetch_from": "contact_person.mobile_no",
    "fieldname": "contact_mobile",
    "fieldtype": "Data",
-   "options":"Phone",
    "label": "Contact Mobile"
   },
   {
@@ -339,7 +330,7 @@
    "options": "Tender Item"
   },
   {
-   "depends_on": "eval:!doc.__islocal",
+   "depends_on": "eval:doc.docstatus==1;",
    "fieldname": "queries_tab",
    "fieldtype": "Tab Break",
    "label": "Queries"
@@ -357,14 +348,6 @@
    "label": "Price Bid"
   },
   {
-   "allow_on_submit": 1,
-   "fieldname": "price_bid_opening_section",
-   "fieldtype": "Section Break",
-   "label": "Price Bid Opening",
-   "options": "fa fa-file-text"
-  },
-  {
-   "allow_on_submit": 1,
    "fieldname": "price_bid_opening",
    "fieldtype": "Table",
    "label": "Price Bid Opening",
@@ -379,26 +362,6 @@
    "fieldname": "additional_info_section",
    "fieldtype": "Section Break",
    "label": "Additional Info"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Tender",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "fieldname": "connections",
-   "fieldtype": "Tab Break",
-   "label": "Connections",
-   "show_dashboard": 1
-  },
-  {
-   "fieldname": "section_break_lgvnz",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "tender_no",
@@ -422,7 +385,7 @@
    "options": "Project"
   },
   {
-   "fieldname": "column_break_67jkb",
+   "fieldname": "column_break_agao",
    "fieldtype": "Column Break"
   },
   {
@@ -438,43 +401,22 @@
    "options": "Bank Guarantee"
   },
   {
-   "fieldname": "quotation",
+   "fieldname": "bidquotation",
    "fieldtype": "Link",
    "label": "Bid/Quotation",
    "options": "Quotation"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nClosed\nSubmitted\nWon\nLost\nCancelled\nOn Hold\nRegret"
   }
  ],
  "index_web_pages_for_search": 1,
- "is_calendar_and_gantt": 1,
  "is_submittable": 1,
- "links": [
-  {
-   "group": "Quotation",
-   "link_doctype": "Quotation",
-   "link_fieldname": "tender"
-  },
-  {
-   "group": "EMD",
-   "link_doctype": "EMD",
-   "link_fieldname": "tender"
-  },
-  {
-   "group": "Sales Order",
-   "link_doctype": "Sales Order",
-   "link_fieldname": "tender"
-  },
-  {
-   "group": "Project",
-   "link_doctype": "Project",
-   "link_fieldname": "tender"
-  },
-  {
-   "group": "Bank Guarantee",
-   "link_doctype": "Bank Guarantee",
-   "link_fieldname": "tender"
-  }
- ],
- "modified": "2024-12-11 01:35:06.621206",
+ "links": [],
+ "modified": "2024-12-14 16:14:16.829360",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
@@ -491,41 +433,10 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Tender Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Tender User",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Projects Manager",
-   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
- "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
