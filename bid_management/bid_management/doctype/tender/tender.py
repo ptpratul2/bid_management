@@ -4,6 +4,7 @@
 import frappe
 from frappe.model.document import Document
 from frappe.model.mapper import get_mapped_doc
+from frappe.utils import getdate
 
 from datetime import datetime, timedelta
 
@@ -18,25 +19,36 @@ class Tender(Document):
 
 @frappe.whitelist()
 def make_emd(source_name, target_doc=None):
-	def postprocess(source, doc):
-		doc.project_type = "External"
-		doc.project_name = source.name
+    def postprocess(source, doc):
+        # Assign additional values after mapping
+        doc.project_type = "External"
+        doc.project_name = source.name
+        # Convert submission_deadline to a date and set due_date
+        if source.submission_deadline:
+            doc.due_date = getdate(source.submission_deadline)
 
-	doc = get_mapped_doc("Tender", source_name, {
-		"Tender": {
-			"doctype": "EMD",
-			"validation": {
-				"docstatus": ["=", 0]
-			},
-			"field_map":{
-				"name" : "custom_tender",
-				"customer_name" : "customer",
-				"estimated_tender_amount":"estimated_costing",
-				"tender_no":"tender_no"
-			}
-		},
-	}, target_doc, postprocess)
-	return doc
+    # Mapping configuration
+    doc = get_mapped_doc("Tender", source_name, {
+        "Tender": {
+            "doctype": "EMD",
+            "validation": {
+                "docstatus": ["=", 0]
+            },
+            "field_map": {
+                "name": "custom_tender",
+                "organization": "customer",
+                "submission_deadline": "due_date",
+                "company":"company",
+                "name":"tender",
+                "customer_name": "customer",
+                "estimated_tender_amount": "estimated_costing",
+                "tender_no": "tender_no",
+                "contact_person":"contact_person"
+            }
+        },
+    }, target_doc, postprocess)
+
+    return doc
 @frappe.whitelist()
 def make_quotation(source_name, target_doc=None):
 	def postprocess(source, doc):
@@ -51,8 +63,12 @@ def make_quotation(source_name, target_doc=None):
 			},
 			"field_map":{
 				"name" : "custom_tender",
-				"customer_name" : "customer",
-				"estimated_tender_amount":"estimated_costing"
+				"Customer" : "quotation_to",
+				"validity_end_date":"valid_till",
+    			"company":"company",
+				"organization": "party_name",
+				"estimated_tender_amount":"estimated_costing",
+				"contact_person":"contact_person"
 			}
 		},
 	}, target_doc, postprocess)
@@ -68,12 +84,16 @@ def make_sales_order(source_name, target_doc=None):
 		"Tender": {
 			"doctype": "Sales Order",
 			"validation": {
-				"docstatus": ["=", 0]
+				"docstatus": ["=", 1]
 			},
 			"field_map":{
-				"name" : "custom_tender",
-				"customer_name" : "customer",
-				"estimated_tender_amount":"estimated_costing"
+				"name" : "tender",
+				"company" : "company",
+				"estimated_tender_amount":"estimated_costing",
+    			"validity_end_date":"valid_till",
+				"organization": "customer",
+    			"contact_person":"contact_person",
+				"project":"project"
 			}
 		},
 	}, target_doc, postprocess)
@@ -89,7 +109,7 @@ def make_project(source_name, target_doc=None):
 		"Tender": {
 			"doctype": "Project",
 			"validation": {
-				"docstatus": ["=", 0]
+				"docstatus": ["=", 1]
 			},
 			"field_map":{
 				"name" : "custom_tender",

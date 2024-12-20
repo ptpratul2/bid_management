@@ -53,10 +53,15 @@ frappe.ui.form.on('Tender', {
             // Add custom buttons
             frm.add_custom_button(__('EMD'), () => frm.events.make_emd(frm), __('Create'));
             frm.add_custom_button(__('Quotation'), () => frm.events.make_quotation(frm), __('Create'));
+            // frm.add_custom_button(__('Bank Guarantee'), () => frm.events.make_bank_guarantee(frm), __('Create'));
+
+            // Set buttons group as primary
+            frm.page.set_inner_btn_group_as_primary(__('Create'));
+        }
+        if (frm.doc.docstatus === 1) {
+            // Add custom buttons
             frm.add_custom_button(__('Sales Order'), () => frm.events.make_sales_order(frm), __('Create'));
             frm.add_custom_button(__('Project'), () => frm.events.make_project(frm), __('Create'));
-            frm.add_custom_button(__('Bank Guarantee'), () => frm.events.make_bank_guarantee(frm), __('Create'));
-
             // Set buttons group as primary
             frm.page.set_inner_btn_group_as_primary(__('Create'));
         }
