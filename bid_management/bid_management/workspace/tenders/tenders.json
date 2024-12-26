@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"D3KQbWw3aR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tenders</span>\",\"col\":12}},{\"id\":\"X6h7vyfS1B\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tender\",\"col\":3}},{\"id\":\"xmyaEctt2Q\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bid\",\"col\":3}}]",
+ "content": "[{\"id\":\"D3KQbWw3aR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tenders</span>\",\"col\":12}},{\"id\":\"X6h7vyfS1B\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tender\",\"col\":4}},{\"id\":\"5v5JTsK5_f\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"EMD\",\"col\":4}}]",
  "creation": "2024-03-11 15:53:29.043857",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,8 +13,8 @@
  "is_hidden": 0,
  "label": "Tenders",
  "links": [],
- "modified": "2024-08-30 14:18:24.612012",
- "modified_by": "Administrator",
+ "modified": "2024-12-26 19:58:59.168220",
+ "modified_by": "h.shivhare@respoproducts.com",
  "module": "Bid Management",
  "name": "Tenders",
  "number_cards": [],
@@ -25,6 +25,14 @@
  "roles": [],
  "sequence_id": 21.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "EMD",
+   "link_to": "EMD",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Grey",
    "doc_view": "List",

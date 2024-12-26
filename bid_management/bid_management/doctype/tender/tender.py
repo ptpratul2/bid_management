@@ -35,20 +35,20 @@ def make_emd(source_name, target_doc=None):
                 "docstatus": ["=", 0]
             },
             "field_map": {
-                "name": "custom_tender",
                 "organization": "customer",
                 "submission_deadline": "due_date",
                 "company":"company",
-                "name":"tender",
-                "customer_name": "customer",
+                "name":"tender_name",
+            #    "customer_name": "customer",
                 "estimated_tender_amount": "estimated_costing",
                 "tender_no": "tender_no",
-                "contact_person":"contact_person"
-            }
+                "contact_person":"contact_person",
+            },
+            "field_no_map": ["status"]
         },
     }, target_doc, postprocess)
-
     return doc
+
 @frappe.whitelist()
 def make_quotation(source_name, target_doc=None):
 	def postprocess(source, doc):

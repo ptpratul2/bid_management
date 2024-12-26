@@ -4,7 +4,7 @@ frappe.listview_settings['EMD'] = {
 	add_fields: ['status'],
 	get_indicator: function(doc) {
 		
-		if(doc.status === "Due"){
+        if(doc.status === "Due"){
             return [__("Due"), "orange", "status,=,Due"];
         }
 		if(doc.status === "Refunded"){

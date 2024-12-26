@@ -79,9 +79,10 @@
   },
   {
    "fieldname": "item",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "in_list_view": 1,
    "label": "Item",
+   "max_height": "50px",
    "reqd": 1
   },
   {
@@ -96,21 +97,21 @@
    "fieldname": "phone",
    "fieldtype": "Data",
    "label": "Phone",
-   "read_only": 1,
-   "options":"Phone"
+   "options": "Phone",
+   "read_only": 1
   },
   {
    "fetch_from": "reporting_officer.mobile_no",
    "fieldname": "mobile",
    "fieldtype": "Data",
    "label": "Mobile",
-   "read_only": 1,
-    "options":"Phone"
+   "options": "Phone",
+   "read_only": 1
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2024-09-28 00:16:25.455668",
+ "modified": "2024-12-27 00:08:49.706927",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender Item",
