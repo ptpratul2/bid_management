@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2024-12-26 21:21:13.503092",
  "default_view": "List",
@@ -17,7 +18,6 @@
   "extra_charges",
   "expense_account",
   "cost_center",
-  "reference_num",
   "returned",
   "forfeited",
   "write_off_account",
@@ -35,6 +35,7 @@
   "tender_no",
   "payment_mode",
   "reference_date",
+  "reference_num",
   "is_opening",
   "send_weekly_reminder",
   "description_section",
@@ -62,7 +63,7 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
-   "label": "Naming Series",
+   "label": "Series",
    "options": "EMD-"
   },
   {
@@ -196,6 +197,7 @@
    "label": "Tender Name",
    "no_copy": 1,
    "options": "Tender",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -203,6 +205,7 @@
    "fieldtype": "Data",
    "label": "Tender No",
    "no_copy": 1,
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -417,7 +420,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-26 23:03:51.301499",
+ "modified": "2024-12-27 15:45:01.432268",
  "modified_by": "Administrator",
  "module": "EMD Management",
  "name": "EMD",
@@ -450,6 +453,18 @@
    "read": 1,
    "report": 1,
    "role": "Accounts Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
    "share": 1,
    "submit": 1,
    "write": 1
