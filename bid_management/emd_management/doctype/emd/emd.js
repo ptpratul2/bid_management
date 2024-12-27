@@ -26,7 +26,7 @@ frappe.ui.form.on('EMD', {
 			// doc: frm.doc.mode_of_payment,
 			method: "bid_management.emd_management.doctype.emd.emd.get_bank_account",
 			args: {
-				mode_of_payment: frm.doc.mode_of_payment 
+				mode_of_payment: frm.doc.mode_of_payment
 			},
 			callback: function(r){
 				if(r.message){
