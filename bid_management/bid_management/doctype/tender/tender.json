@@ -88,7 +88,9 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "TDR-.YYYY.-"
+   "no_copy": 1,
+   "options": "TDR-.YYYY.-",
+   "set_only_once": 1
   },
   {
    "fieldname": "organization",
@@ -442,7 +444,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-27 15:41:49.946410",
+ "modified": "2025-01-03 21:18:05.594577",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
