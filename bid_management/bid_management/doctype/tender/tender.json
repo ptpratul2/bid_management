@@ -39,13 +39,13 @@
   "pre_bid_conference_venue",
   "submission_date",
   "reason_for_regret",
-  "currency_section",
+  "section_break_bxor",
   "currency",
   "column_break_enna",
   "exchange_rate",
   "column_break_radc",
-  "estimated_tender_amount",
-  "estimated_tender_amount_company_currency",
+  "tender_amount",
+  "base_tender_amount",
   "contact_tab",
   "contact_person",
   "column_break_vhqd",
@@ -130,6 +130,7 @@
   {
    "fieldname": "tender_owner",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Tender Owner",
    "options": "User"
   },
@@ -255,13 +256,6 @@
    "label": "Reason for Regret"
   },
   {
-   "collapsible": 1,
-   "fieldname": "currency_section",
-   "fieldtype": "Section Break",
-   "hidden": 1,
-   "label": "Currency"
-  },
-  {
    "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
@@ -279,16 +273,6 @@
   {
    "fieldname": "column_break_radc",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "estimated_tender_amount",
-   "fieldtype": "Currency",
-   "label": "Estimated Tender Amount"
-  },
-  {
-   "fieldname": "estimated_tender_amount_company_currency",
-   "fieldtype": "Currency",
-   "label": "Estimated Tender Amount (Company Currency)"
   },
   {
    "fieldname": "contact_tab",
@@ -439,12 +423,31 @@
    "fieldtype": "Select",
    "label": "Evaluation Type",
    "options": "\nItem Wise\nTotal Value Wise"
+  },
+  {
+   "fieldname": "section_break_bxor",
+   "fieldtype": "Section Break",
+   "label": "Tender Value"
+  },
+  {
+   "fieldname": "tender_amount",
+   "fieldtype": "Currency",
+   "label": "Tender Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_tender_amount",
+   "fieldtype": "Currency",
+   "label": "Tender Amount (Company Currency)",
+   "options": "Company:company:default_currency",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-03 21:18:05.594577",
+ "modified": "2025-01-05 13:30:12.572455",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",

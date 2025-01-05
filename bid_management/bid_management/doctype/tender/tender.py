@@ -40,7 +40,7 @@ def make_emd(source_name, target_doc=None):
                 "company":"company",
                 "name":"tender_name",
             #    "customer_name": "customer",
-                "estimated_tender_amount": "estimated_costing",
+                "tender_amount": "estimated_costing",
                 "tender_no": "tender_no",
                 "contact_person":"contact_person",
             },
@@ -67,7 +67,7 @@ def make_quotation(source_name, target_doc=None):
 				"validity_end_date":"valid_till",
     			"company":"company",
 				"organization": "party_name",
-				"estimated_tender_amount":"estimated_costing",
+				"tender_amount":"estimated_costing",
 				"contact_person":"contact_person"
 			}
 		},
@@ -89,7 +89,7 @@ def make_sales_order(source_name, target_doc=None):
 			"field_map":{
 				"name" : "tender",
 				"company" : "company",
-				"estimated_tender_amount":"estimated_costing",
+				"tender_amount":"estimated_costing",
     			"validity_end_date":"valid_till",
 				"organization": "customer",
     			"contact_person":"contact_person",
@@ -114,7 +114,7 @@ def make_project(source_name, target_doc=None):
 			"field_map":{
 				"name" : "custom_tender",
 				"customer_name" : "customer",
-				"estimated_tender_amount":"estimated_costing"
+				"tender_amount":"estimated_costing"
 			}
 		},
 	}, target_doc, postprocess)
@@ -135,7 +135,7 @@ def make_bank_guarantee(source_name, target_doc=None):
 			"field_map":{
 				"name" : "custom_tender",
 				"customer_name" : "customer",
-				"estimated_tender_amount":"estimated_costing"
+				"tender_amount":"estimated_costing"
 			}
 		},
 	}, target_doc, postprocess)
