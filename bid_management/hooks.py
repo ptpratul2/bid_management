@@ -4,7 +4,27 @@ app_publisher = "Himanshu Shivhare"
 app_description = "Tender/Bid Management App"
 app_email = "himanshushivhare047@gmail.com"
 app_license = "mit"
-# required_apps = []
+required_apps = ["erpnext"]
+
+import frappe
+
+# Validate dependencies before and after installation
+def validate_dependencies():
+    """
+    Ensures that ERPNext version 15.x is installed before allowing Bid Management installation.
+    """
+    required_apps = {"erpnext": "15."}
+    installed_apps = frappe.get_installed_apps()
+    for app, version_prefix in required_apps.items():
+        if app not in installed_apps:
+            frappe.throw(f"Bid Management requires {app} to be installed.")
+        installed_version = frappe.get_installed_apps_info().get(app, {}).get("version", "")
+        if not installed_version.startswith(version_prefix):
+            frappe.throw(f"Bid Management requires {app} version {version_prefix}x or higher. Found {installed_version}.")
+
+# Hooks for validating dependencies
+before_install = "bid_management.hooks.validate_dependencies"
+after_install = "bid_management.hooks.validate_dependencies"
 
 # Includes in <head>
 # ------------------
