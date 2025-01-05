@@ -42,7 +42,7 @@
   "section_break_bxor",
   "currency",
   "column_break_enna",
-  "exchange_rate",
+  "conversion_rate",
   "column_break_radc",
   "tender_amount",
   "base_tender_amount",
@@ -266,11 +266,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "exchange_rate",
-   "fieldtype": "Float",
-   "label": "Exchange Rate"
-  },
-  {
    "fieldname": "column_break_radc",
    "fieldtype": "Column Break"
   },
@@ -442,12 +437,17 @@
    "options": "Company:company:default_currency",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-05 13:30:12.572455",
+ "modified": "2025-01-05 14:53:49.832200",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
