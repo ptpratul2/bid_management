@@ -13,21 +13,23 @@
   "description",
   "column_break_hjjl",
   "tender_no",
+  "publish_date",
   "type",
   "source",
   "tender_owner",
   "company",
   "column_break_tfbo",
-  "publish_date",
   "submission_deadline",
   "bid_opening_date",
   "tender_validity",
   "validity_end_date",
   "status",
   "stage",
+  "reason_for_regret",
   "section_break_kyha",
   "mse_purchase_preference",
   "mii_purchase_preference",
+  "emd_amount",
   "column_break_dads",
   "inspection_required",
   "bid_to_ra_enabled",
@@ -38,7 +40,6 @@
   "pre_bid_conference_date",
   "pre_bid_conference_venue",
   "submission_date",
-  "reason_for_regret",
   "section_break_bxor",
   "currency",
   "column_break_enna",
@@ -46,11 +47,13 @@
   "column_break_radc",
   "tender_amount",
   "base_tender_amount",
-  "contact_tab",
+  "address_and_contact_tab",
+  "section_break_hggp",
+  "organization_address",
+  "address_display",
+  "column_break_aucy",
   "contact_person",
-  "column_break_vhqd",
   "contact_email",
-  "column_break_iutr",
   "contact_mobile",
   "phone",
   "items_tab",
@@ -250,10 +253,11 @@
    "read_only_depends_on": "eval:doc.status==\"Won\";"
   },
   {
-   "depends_on": "eval:doc.status==\"Rejected\";",
+   "depends_on": "eval:doc.status==\"Regret\";",
    "fieldname": "reason_for_regret",
    "fieldtype": "Data",
-   "label": "Reason for Regret"
+   "label": "Reason for Regret",
+   "mandatory_depends_on": "eval:doc.status==\"Regret\";"
   },
   {
    "fieldname": "currency",
@@ -270,19 +274,10 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "contact_tab",
-   "fieldtype": "Tab Break",
-   "label": "Contact"
-  },
-  {
    "fieldname": "contact_person",
    "fieldtype": "Link",
    "label": "Contact Person",
    "options": "Contact"
-  },
-  {
-   "fieldname": "column_break_vhqd",
-   "fieldtype": "Column Break"
   },
   {
    "fetch_from": "contact_person.email_id",
@@ -290,10 +285,6 @@
    "fieldtype": "Data",
    "label": "Contact Email",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_iutr",
-   "fieldtype": "Column Break"
   },
   {
    "fetch_from": "contact_person.mobile_no",
@@ -442,12 +433,43 @@
    "fieldname": "conversion_rate",
    "fieldtype": "Float",
    "label": "Exchange Rate"
+  },
+  {
+   "fieldname": "emd_amount",
+   "fieldtype": "Currency",
+   "label": "EMD Amount",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "section_break_hggp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "organization_address",
+   "fieldtype": "Link",
+   "label": "Organization Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "address_and_contact_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address & Contact"
+  },
+  {
+   "fieldname": "column_break_aucy",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-05 14:53:49.832200",
+ "modified": "2025-01-07 14:21:02.943997",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",

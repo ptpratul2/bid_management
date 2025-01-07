@@ -19,6 +19,15 @@ frappe.ui.form.on('Tender', {
                 };
             });
 
+            frm.set_query('organization_address', function() {
+                return {
+                    filters: {
+                        link_doctype: 'Customer',
+                        link_name: frm.doc.organization
+                    }
+                };
+            });
+
             frm.set_query('sales_order', function() {
                 return {
                     filters: {
@@ -208,6 +217,30 @@ frappe.ui.form.on('Tender Item', {
             frappe.call({
                 method: "frappe.contacts.doctype.address.address.get_address_display",
                 args: { address_dict: row.consignee_address },
+                callback: function(r) {
+                    if (r.message) {
+                        frappe.model.set_value(cdt, cdn, 'address_display', r.message);
+                    } else {
+                        frappe.msgprint(__('Address display not found.'));
+                    }
+                },
+                error: function(err) {
+                    frappe.msgprint(__('Error fetching address: {0}', [err.message]));
+                }
+            });
+        } else {
+            frappe.model.set_value(cdt, cdn, 'address_display', '');
+        }
+    }
+});
+
+frappe.ui.form.on('Tender', {
+    organization_address: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        if (row.organization_address) {
+            frappe.call({
+                method: "frappe.contacts.doctype.address.address.get_address_display",
+                args: { address_dict: row.organization_address },
                 callback: function(r) {
                     if (r.message) {
                         frappe.model.set_value(cdt, cdn, 'address_display', r.message);
