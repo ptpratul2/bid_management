@@ -459,7 +459,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-10 17:47:56.141871",
+ "modified": "2025-01-10 18:32:06.171801",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
@@ -513,15 +513,15 @@
    "title": "Open"
   },
   {
-   "color": "Cyan",
+   "color": "Light Blue",
    "title": "Submitted"
   },
   {
-   "color": "Gray",
+   "color": "Green",
    "title": "Won"
   },
   {
-   "color": "Green",
+   "color": "Gray",
    "title": "Lost"
   },
   {
