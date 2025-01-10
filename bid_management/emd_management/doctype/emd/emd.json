@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2024-12-26 21:21:13.503092",
  "default_view": "List",
@@ -64,7 +63,8 @@
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Series",
-   "options": "EMD-"
+   "options": "EMD-",
+   "print_hide": 1
   },
   {
    "fieldname": "customer",
@@ -420,7 +420,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-27 15:45:01.432268",
+ "modified": "2025-01-10 13:15:27.063631",
  "modified_by": "Administrator",
  "module": "EMD Management",
  "name": "EMD",

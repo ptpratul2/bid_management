@@ -1,8 +1,8 @@
 {
  "actions": [],
- "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2024-12-12 22:06:46.313076",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -11,19 +11,18 @@
   "organization",
   "location",
   "description",
+  "company",
   "column_break_hjjl",
   "tender_no",
   "publish_date",
   "type",
-  "source",
-  "tender_owner",
-  "company",
+  "tender_validity",
+  "validity_end_date",
   "column_break_tfbo",
   "submission_deadline",
   "bid_opening_date",
-  "tender_validity",
-  "validity_end_date",
   "status",
+  "submission_date",
   "stage",
   "reason_for_regret",
   "section_break_kyha",
@@ -39,7 +38,6 @@
   "column_break_qiej",
   "pre_bid_conference_date",
   "pre_bid_conference_venue",
-  "submission_date",
   "section_break_bxor",
   "currency",
   "column_break_enna",
@@ -111,7 +109,8 @@
   {
    "fieldname": "description",
    "fieldtype": "Small Text",
-   "label": "Description"
+   "label": "Description",
+   "max_height": "100px"
   },
   {
    "fieldname": "column_break_hjjl",
@@ -122,20 +121,6 @@
    "fieldtype": "Select",
    "label": "Type",
    "options": "\nOffline\nOnline"
-  },
-  {
-   "fieldname": "source",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Source",
-   "options": "\nDirect\nGeM\nOther"
-  },
-  {
-   "fieldname": "tender_owner",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Tender Owner",
-   "options": "User"
   },
   {
    "fieldname": "company",
@@ -245,19 +230,20 @@
    "label": "Pre Bid Conference Venue"
   },
   {
-   "depends_on": "eval:doc.status == \"Bid Submitted\";",
+   "depends_on": "eval:doc.status == \"Submitted\";",
    "fieldname": "submission_date",
    "fieldtype": "Datetime",
    "label": "Submission Date",
-   "mandatory_depends_on": "eval:doc.status == \"Bid Submitted\";",
+   "mandatory_depends_on": "eval:doc.status == \"Submitted\";",
    "read_only_depends_on": "eval:doc.status==\"Won\";"
   },
   {
    "depends_on": "eval:doc.status==\"Regret\";",
    "fieldname": "reason_for_regret",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Reason for Regret",
-   "mandatory_depends_on": "eval:doc.status==\"Regret\";"
+   "mandatory_depends_on": "eval:doc.status==\"Regret\";",
+   "max_height": "75px"
   },
   {
    "fieldname": "currency",
@@ -403,7 +389,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Open\nClosed\nSubmitted\nWon\nLost\nCancelled\nOn Hold\nRegret"
+   "options": "Open\nSubmitted\nWon\nLost\nCancelled\nOn Hold\nRegret"
   },
   {
    "fieldname": "evaluation_type",
@@ -470,7 +456,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-07 15:57:01.877175",
+ "modified": "2025-01-10 13:06:51.623743",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
