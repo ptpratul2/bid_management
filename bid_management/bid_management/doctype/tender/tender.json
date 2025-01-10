@@ -386,10 +386,13 @@
   },
   {
    "allow_on_submit": 1,
+   "default": "Open",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
-   "options": "Open\nSubmitted\nWon\nLost\nCancelled\nOn Hold\nRegret"
+   "options": "Open\nSubmitted\nWon\nLost\nCancelled\nRegret"
   },
   {
    "fieldname": "evaluation_type",
@@ -456,7 +459,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-10 13:06:51.623743",
+ "modified": "2025-01-10 17:47:56.141871",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",
@@ -504,6 +507,31 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Open"
+  },
+  {
+   "color": "Cyan",
+   "title": "Submitted"
+  },
+  {
+   "color": "Gray",
+   "title": "Won"
+  },
+  {
+   "color": "Green",
+   "title": "Lost"
+  },
+  {
+   "color": "Yellow",
+   "title": "Regret"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ],
  "track_changes": 1
 }
