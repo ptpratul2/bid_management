@@ -109,8 +109,7 @@
   {
    "fieldname": "description",
    "fieldtype": "Small Text",
-   "label": "Description",
-   "max_height": "100px"
+   "label": "Description"
   },
   {
    "fieldname": "column_break_hjjl",
@@ -242,8 +241,7 @@
    "fieldname": "reason_for_regret",
    "fieldtype": "Small Text",
    "label": "Reason for Regret",
-   "mandatory_depends_on": "eval:doc.status==\"Regret\";",
-   "max_height": "75px"
+   "mandatory_depends_on": "eval:doc.status==\"Regret\";"
   },
   {
    "fieldname": "currency",
@@ -428,7 +426,7 @@
    "fieldname": "emd_amount",
    "fieldtype": "Currency",
    "label": "EMD Amount",
-   "options": "Company:company:default_currency"
+   "options": "currency"
   },
   {
    "fieldname": "section_break_hggp",
@@ -459,7 +457,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-10 18:32:06.171801",
+ "modified": "2025-01-12 00:07:46.192572",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",

@@ -18,7 +18,10 @@
   "reporting_officer",
   "email",
   "phone",
-  "mobile"
+  "mobile",
+  "section_break_galz",
+  "emd_amount",
+  "base_emd_amount"
  ],
  "fields": [
   {
@@ -104,13 +107,28 @@
    "fieldtype": "Small Text",
    "in_list_view": 1,
    "label": "Item Category",
-   "max_height": "50px",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_galz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "emd_amount",
+   "fieldtype": "Currency",
+   "label": "EMD Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_emd_amount",
+   "fieldtype": "Currency",
+   "label": "EMD Amount (Company Currency)",
+   "options": "Company:company:default_currency"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2024-12-27 12:07:05.655698",
+ "modified": "2025-01-12 00:28:41.140406",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender Item",
