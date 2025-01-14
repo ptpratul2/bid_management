@@ -57,6 +57,7 @@
   "items_tab",
   "items",
   "queries_tab",
+  "section_break_vhzy",
   "query",
   "price_bid_tab",
   "price_bid_opening",
@@ -296,6 +297,7 @@
    "options": "Tender Item"
   },
   {
+   "allow_on_submit": 1,
    "depends_on": "eval:doc.docstatus==1;",
    "fieldname": "queries_tab",
    "fieldtype": "Tab Break",
@@ -308,6 +310,7 @@
    "options": "Query"
   },
   {
+   "allow_on_submit": 1,
    "depends_on": "eval:doc.docstatus==1;",
    "fieldname": "price_bid_tab",
    "fieldtype": "Tab Break",
@@ -452,12 +455,16 @@
   {
    "fieldname": "column_break_aucy",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_vhzy",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-12 00:07:46.192572",
+ "modified": "2025-01-14 16:12:10.858578",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender",

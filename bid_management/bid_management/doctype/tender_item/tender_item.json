@@ -123,12 +123,13 @@
    "fieldname": "base_emd_amount",
    "fieldtype": "Currency",
    "label": "EMD Amount (Company Currency)",
-   "options": "Company:company:default_currency"
+   "options": "Company:company:default_currency",
+   "read_only": 1
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2025-01-12 00:28:41.140406",
+ "modified": "2025-01-12 16:37:18.721519",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender Item",
