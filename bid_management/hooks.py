@@ -188,6 +188,13 @@ doc_events = {
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "bid_management.event.get_events"
 # }
+
+override_whitelisted_methods = {
+    "erpnext.stock.doctype.quality_inspection_template.quality_inspection_template.get_template_details": 
+    "bid_management.override.custom_get_template_details"
+}
+
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
