@@ -11,6 +11,7 @@
   "column_break_xyrl",
   "qty",
   "uom",
+  "can_quote",
   "section_break_nojc",
   "consignee_address",
   "address_display",
@@ -125,11 +126,17 @@
    "label": "EMD Amount (Company Currency)",
    "options": "Company:company:default_currency",
    "read_only": 1
+  },
+  {
+   "fieldname": "can_quote",
+   "fieldtype": "Select",
+   "label": "Can Quote?",
+   "options": "\nYes\nNo"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2025-01-12 16:37:18.721519",
+ "modified": "2025-01-29 15:56:52.915678",
  "modified_by": "Administrator",
  "module": "Bid Management",
  "name": "Tender Item",
